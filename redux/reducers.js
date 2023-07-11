@@ -1,7 +1,7 @@
-import contactsData from '../data/contacts';
+import { combineReducers } from 'redux';
 
 const initialState = {
-  contacts: contactsData,
+  contacts: [],
 };
 
 const contactReducer = (state = initialState, action) => {
@@ -35,4 +35,8 @@ const contactReducer = (state = initialState, action) => {
   }
 };
 
-export default contactReducer;
+const rootReducer = combineReducers({
+  contact: contactReducer,
+});
+
+export default rootReducer;
